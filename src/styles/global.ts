@@ -21,5 +21,7 @@ export default createGlobalStyle`
         --gray0: #F5F5F5;
 
         --white: #FFFFFF;
+
+        --negative: #E60000;
     }
 `

@@ -1,8 +1,13 @@
+import { FieldError } from "react-hook-form/dist/types";
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
-    position: relative;
+interface iInputContainerProps {
+    errors: any;
+}
 
+export const InputContainer = styled.div<iInputContainerProps>`
+    position: relative;
+    
     & > input {
         width: 100%;
         height: 60px;
@@ -54,5 +59,9 @@ export const InputContainer = styled.div`
         background-color: var(--white);
 
         border: 2px solid var(--gray600);
+    }
+
+    & > input:valid {
+        border: ${(props: iInputContainerProps)  => props.errors ? "2px solid var(--negative)" : "2px solid var(--primary)"}
     }
 `

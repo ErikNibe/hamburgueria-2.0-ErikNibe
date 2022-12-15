@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ContainerIndex = styled.div`
+interface iContainerIndex {
+    registerPage: boolean;
+}
+
+export const ContainerIndex = styled.div<iContainerIndex>`
     display: flex;
     justify-content: space-between;
 
@@ -10,7 +14,7 @@ export const ContainerIndex = styled.div`
     margin: 98px auto;
 
     @media (max-width: 970px) {
-        flex-direction: column-reverse;
+        flex-direction: ${({ registerPage }) => registerPage ? "column" : "column-reverse"};
 
         width: max-content;
     }

@@ -1,3 +1,5 @@
+import { UseFormRegisterReturn } from "react-hook-form";
+import { FieldError } from "react-hook-form/dist/types";
 import { InputContainer } from "./styles"
 
 interface iInputProps {
@@ -5,13 +7,15 @@ interface iInputProps {
     label: string;
     required?: boolean;
     repeated?: boolean;
+    register: UseFormRegisterReturn;
+    errors?: FieldError;
 }
 
-export const Input = ({ type, label, repeated }: iInputProps) => {
+export const Input = ({ type, label, repeated, register, errors }: iInputProps) => {
 
     return (
-        <InputContainer>
-            <input type={ type } id={ repeated ? type + "1" : type } required={true}/>
+        <InputContainer errors={errors}>
+            <input type={ type } id={ repeated ? type + "1" : type } {...register} required/>
             <label>{label}</label>
         </InputContainer>
     )

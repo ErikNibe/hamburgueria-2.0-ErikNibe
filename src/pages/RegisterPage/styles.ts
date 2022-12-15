@@ -15,3 +15,9 @@ export const Link = styled(LinkRouter)`
         color: var(--gray200);
     }
 `
+
+export const ErrorMessage = styled.p`
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--negative);
+`
