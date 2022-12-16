@@ -41,6 +41,7 @@ export interface iUserContext {
     setUser: React.Dispatch<React.SetStateAction<iUser | null>>;
     sending: boolean;
     productList: iProduct[] | null;
+    setProductList: React.Dispatch<React.SetStateAction<iProduct[] | null>>;
     loading: boolean;
 }
 

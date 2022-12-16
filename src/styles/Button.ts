@@ -24,6 +24,8 @@ export const Button = styled.button<iButtonProps>`
                 `
             case "small":
                 return css`
+                    min-width: fit-content;
+                    width: 105px;
                     height: 40px;
                     padding: 0 20px;
 
