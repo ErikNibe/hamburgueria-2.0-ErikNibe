@@ -5,6 +5,7 @@ import { RoutesMain as Routes } from "./routes";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { UserContext, UserProvider } from "./contexts/UserContext";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
       <Global />
 
       <UserProvider>
-        <Routes />
+        <CartProvider>
+          <Routes />
+        </CartProvider>
       </UserProvider>
 
       <ToastContainer

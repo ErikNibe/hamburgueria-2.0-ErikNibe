@@ -8,9 +8,11 @@ import { Button } from "../../styles/Button";
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Modal } from "../../components/Modal";
+import { CartContext } from "../../contexts/CartContext";
 
 export const DashboardPage = () => {
     const { productList, setProductList } = useContext(UserContext);
+    const { addToCart, totalItens } = useContext(CartContext);
 
     const [filterText, setFilterText] = useState("");
     const [filter, setFilter] = useState("");
@@ -49,7 +51,7 @@ export const DashboardPage = () => {
 
                         <CartBtn onClick={() => setOpenModal(true)}>
                             <img src={CartIcon} alt="Icone de carrinho" />
-                            <span>0</span>
+                            <span>{totalItens}</span>
                         </CartBtn>
 
                         <LogoutBtn onClick={() => handleLogout()}>
@@ -93,7 +95,7 @@ export const DashboardPage = () => {
 
                                         <span>R${product.price.toFixed(2)}</span>
 
-                                        <Button btnSize="small" btnColor="green">Adicionar</Button>
+                                        <Button btnSize="small" btnColor="green" onClick={() => addToCart(product)}>Adicionar</Button>
                                     </div>
                                 </CardContainer>
                             ))

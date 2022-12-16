@@ -178,9 +178,17 @@ export const CardContainer = styled.li`
         }
     }
 
+    .btn__remove {
+        border: none;
+        background: none;
+        height: fit-content;
+    }
+
     .bin__icon {
         width: 15px;
         height: 17px;
+
+        cursor: pointer;
     }
 `
 
