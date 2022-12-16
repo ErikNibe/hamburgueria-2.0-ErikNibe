@@ -25,8 +25,9 @@ export const CartProvider = ({ children }: iCartProviderProps) => {
             );
         }
         else {
+            
             setCartList([...cartList, {...product, quantity: 1}]);
-            console.log(cartList);
+
         }
     }
 
